@@ -1,2 +1,10 @@
 /.idea/
 /venv/
+# Ignore everything
+*
+
+# But include CHANDU_Banking folder
+!CHANDU_Banking/
+
+# Include the .gitignore file itself
+!.gitignore
