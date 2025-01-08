@@ -74,7 +74,7 @@ def uniqueEmail(emailId):
 #         conn = db_connect()
 #         cursor = conn.cursor()
 #         # Execute a query to check if the email already exists
-#         query = "SELECT COUNT(*) FROM flm_accounts WHERE account_number = %s"
+#         query = "SELECT COUNT(*) FROM chandu_accounts WHERE account_number = %s"
 #         cursor.execute(query, (AccNum,))
 #         # print(cursor.fetchall())
 #         # print(cursor.fetchone())

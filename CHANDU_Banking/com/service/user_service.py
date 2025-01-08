@@ -114,7 +114,7 @@ def login(user_mail):
                     update_data('chandu_users', values={'failedcountattempts': failedLoginAttemps}, conditions={'email': user_mail})
                     return False
                 # else:
-                #     print("[-] Account is locked.. Please try after some time...")
+                #     print("[-] Account is locked Please try after some time...")
                 #     print()
                 #     return False
 

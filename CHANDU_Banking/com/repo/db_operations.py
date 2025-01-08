@@ -63,9 +63,9 @@ def insert_data(table_name, **kwargs):
 
 
 # Example usage:
-# insert_data('flm_users', first_name='John', last_name='Doe', email='johndoe@example.com', dob='1990-01-01', salt='randomSalt123', password='hashedPassword456')
-# insert_data('flm_accounts', user_id=1, account_number='1234567890', balance=1000.00, is_active=True)
-# insert_data('flm_transactions', user_id=1, account_id=1, amount=200.00, from_account='1234567890', to_account='0987654321', data='2023-09-19', trans_type='db')
+# insert_data('chandu_users', first_name='John', last_name='Doe', email='johndoe@example.com', dob='1990-01-01', salt='randomSalt123', password='hashedPassword456')
+# insert_data('chandu_accounts', user_id=1, account_number='1234567890', balance=1000.00, is_active=True)
+# insert_data('chandu_transactions', user_id=1, account_id=1, amount=200.00, from_account='1234567890', to_account='0987654321', data='2023-09-19', trans_type='db')
 
 
 def fetch_data(table_name, **kwargs):

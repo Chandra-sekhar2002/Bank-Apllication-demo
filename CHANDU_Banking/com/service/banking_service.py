@@ -1,4 +1,6 @@
+#from CHANDU_Banking.com.app import user_mail
 from CHANDU_Banking.com.repo.db_operations import *
+from CHANDU_Banking.com.service.mail_operations import *
 
 # function to fetch userId based on user_email
 def fetch_userID(user_mail):
@@ -171,21 +173,29 @@ def transactionHistory(user_email):
             """
 
         # Execute the query with the provided user_email
+        # Execute the query and fetch transaction history
         cursor.execute(query, (user_email,))
 
-        # Fetch and print the transaction history
-        print("Transaction History for User:", user_email)
-        print("{:<15} {:<15} {:<20} {:<15} {:<15} {:<15} {:<15} {:<10}".format("First Name", "Last Name",
-                                                                               "Account Number", "Amount",
-                                                                               "From Account", "To Account", "Date",
-                                                                               "Trans Type"))
+        # Initialize the message string
+        message = f"Transaction History for User: {user_email}\n\n"
+        message += "{:<15} {:<15} {:<20} {:<15} {:<15} {:<15} {:<15} {:<10}\n".format(
+            "First Name", "Last Name", "Account Number", "Amount", "From Account", "To Account", "Date", "Trans Type"
+        )
+        message += "-" * 100 + "\n"
+
+        # Fetch rows and append to the message
         for row in cursor.fetchall():
             first_name, last_name, account_number, amount, from_account, to_account, trans_date, trans_type = row
-            print(
-                "{:<15} {:<15} {:<20} {:<15} {:<15} {:<15} {:<15} {:<10}".format(first_name, last_name, account_number,
-                                                                                 amount, from_account, to_account, str(trans_date),
-                                                                                 trans_type))
+            message += "{:<15} {:<15} {:<20} {:<15} {:<15} {:<15} {:<15} {:<10}\n".format(
+                first_name, last_name, account_number, amount, from_account, to_account, str(trans_date), trans_type
+            )
 
+        # Print the message (for debugging purposes)
+        print(message)
+
+        # You can now send this `message` via email or other communication methods
+
+        statement_sent_to(email=user_email,statement=message)
         print()
         # Close the cursor and the database connection
         cursor.close()
