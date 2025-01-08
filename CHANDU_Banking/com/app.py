@@ -3,7 +3,7 @@ from CHANDU_Banking.com.service.banner_printing import *
 from CHANDU_Banking.com.service.banking_service import *
 import time
 
-# code to print FLB Bank banner
+# code to print CHANDU Bank banner
 try:
     bannerPrinting()
 except:

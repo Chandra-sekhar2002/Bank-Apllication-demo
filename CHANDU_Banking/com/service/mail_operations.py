@@ -3,7 +3,6 @@ import time
 import smtplib
 from random import randint
 from CHANDU_Banking.com.service.constants import *
-
 # function that generates random number
 def otp_gen():
     otp = randint(100000, 999999)
@@ -13,17 +12,15 @@ def otp_gen():
 # function that sends mail and verifies OTP
 def mailOtpVerification(email):
 
+
     # senderMail = SENDERMAIL
     # password = MAILPASS
-
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.login(SENDERMAIL, MAILPASS)
 
     otp = otp_gen()
-
-    server.sendmail(SENDERMAIL, email,
-                    "Welcome, to Chandu Bank, Trust Above all.\n" + "your OTP number is :" + str(otp) )
-
+    message = f"Welcome to FLM Bank, Trust Above All.\n\nYour OTP is: {otp}\n\nThis OTP is valid for 5 minutes."
+    server.sendmail(SENDERMAIL, email,message)
     print("otp sent to: " + email)
     server.quit()
     print()

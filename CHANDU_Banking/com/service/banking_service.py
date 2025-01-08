@@ -88,13 +88,13 @@ def withdrawlMoney(user_mail,withdrawlMoney):
 
 def transferMoney(user_mail,transferAmount):
 
-    # fetching senderUserId based on user_mail from flm_users table
+    # fetching senderUserId based on user_mail from chandu_users table
     senderUserId = fetch_userID(user_mail)
 
-    # fetching account information from senderUserId from flm_accounts table
+    # fetching account information from senderUserId from chandu_accounts table
     senderAccountDetails = fetch_data('chandu_accounts', user_id=senderUserId)
 
-    # extracting senderDetails from flm_accounts table
+    # extracting senderDetails from chandu_accounts table
     senderBalance = senderAccountDetails[0][3]
     senderAccountId = senderAccountDetails[0][0]
     senderAccountNumber = senderAccountDetails[0][2]

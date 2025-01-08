@@ -1,0 +1,11 @@
+def prime(num):
+    isprime = 1  # assuming that num is prime
+    for i in range(2, num // 2):
+        if (num % i == 0):
+            isprime = 0
+            break
+    if (isprime == 1):
+        print(num, "is a prime number")
+    else:
+        print(num, "is not a prime number")
+
