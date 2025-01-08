@@ -112,11 +112,11 @@ def transferMoney(user_mail,transferAmount):
             # performing update operations on sender account balance
             UptSenderBalance = senderBalance - transferAmount
 
-            # updating new sender account info into flm_accounts database
+            # updating new sender account info into chandu_accounts database
             update_data('chandu_accounts', values={'balance': UptSenderBalance}, conditions={'user_id': senderUserId})
             displayBalance(user_mail)
 
-            # fetching receiver account info from flm_accounts
+            # fetching receiver account info from chandu_accounts
             receiver_db_data = fetch_data('chandu_accounts', account_id=receiverAccountId)
 
             # extracting receiver data
