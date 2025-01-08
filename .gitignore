@@ -1,0 +1,30 @@
+/.idea/
+/venv/
+# Ignore everything
+*
+
+# But include CHANDU_Banking folder
+!CHANDU_Banking/
+
+# Include the .gitignore file itself
+!.gitignore
+__pycache__/
+CONSISTENCY.py
+chandu.py
+Demo4excel.xlsx
+demoexcel.xlsx
+dsa.py
+flm.png
+flm.py
+flm1.png
+flmhyd.pdf
+functions.py
+kavita.py
+modules.py
+MyFile.csv
+nit.png
+rough.py
+student.png
+test.db
+text.py
+xyz.py
