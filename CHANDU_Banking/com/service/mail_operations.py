@@ -21,7 +21,7 @@ def mailOtpVerification(email):
         otp = otp_gen()
         timestamp=time.time()
         otp_data[email] = {"otp": otp, "timestamp": timestamp}
-        message = f"Welcome to FLM Bank, Trust Above All.\n\nYour OTP is: {otp}\n\nThis OTP is valid for 5 minutes."
+        message = f"Welcome to CHANDU Bank, Trust Above All.\n\nYour OTP is: {otp}\n\nThis OTP is valid for 5 minutes."
         server.sendmail(SENDERMAIL, email,message)
         print("otp sent to: " + email+" valid only for 5min")
         server.quit()
