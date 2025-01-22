@@ -66,7 +66,7 @@ def statement_sent_to(email,statement):
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.login(SENDERMAIL, MAILPASS)
     server.sendmail(SENDERMAIL,email,statement)
-    print("statement sent to"+email)
+    print("statement sent to "+email)
     server.quit()
     return True
 
