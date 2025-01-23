@@ -3,7 +3,6 @@ import time
 import smtplib
 from random import randint
 from CHANDU_Banking.com.service.constants import *
-from dsa import server
 
 otp_data={}
 # function that generates random number
@@ -62,11 +61,15 @@ def valid_otp(email,user_otp):
 
 
 def statement_sent_to(email,statement):
-    #function to send transaction history to user_email
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login(SENDERMAIL, MAILPASS)
-    server.sendmail(SENDERMAIL,email,statement)
-    print("statement sent to "+email)
-    server.quit()
-    return True
+    try:
+        #function to send transaction history to user_email
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.login(SENDERMAIL, MAILPASS)
+        server.sendmail(SENDERMAIL,email,statement)
+        print("statement sent to "+email)
+        server.quit()
+        return True
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
 
